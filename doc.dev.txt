@@ -1,0 +1,335 @@
+Dokumentasi Kanvasku singkat
+
+gunakan kanvas #<id>
+	Menggunakan kanvas dengan atribut id yang diberikan.
+	
+	DEV
+	var b=document.getElementById('<id>');
+
+siapkan kanvas
+	Menyiapkan kanvas agar bisa digunakan. Harus ditulis setelah gunakan kanvas.
+	
+	DEV
+	var c=b.getContext('2d');
+
+atur ukuran kanvas <lebar> <tinggi>
+	Mengatur ukuran kanvas (bawaan 300x150).
+	
+	DEV
+	b.width=<lebar>;b.height=<tinggi>;
+	
+atur warna isian <warna>
+	Mengubah warna isian.
+	
+	DEV
+	c.fillStyle='<warna>';
+
+atur font <ukuran> <jenis font>
+	Mengganti ukuran dan jenis font tulisan.
+	
+	DEV
+	c.font='<ukuran> <jenis font>';
+
+atur alfa global <nilai>
+	Mengatur nilai (dari 0.0 sampai 1.0) transparansi pewarnaan global.
+	
+	DEV
+	c.globalAlpha=<nilai>;
+
+atur operasi komposit global <operasi komposit>
+	Mengatur cara mewarnai kanvas.
+	Operasi komposit yang ada:
+	- source-over (bawaan)
+	- source-in
+	- source-out
+	- source-atop
+	- destination-over
+	- destination-in
+	- destination-out
+	- destination-atop
+	- lighter
+	- copy
+	- xor
+	- multiply
+	- screen
+	- overlay
+	- darken
+	- lighten
+	- color-dodge
+	- color-burn
+	- hard-light
+	- soft-light
+	- difference
+	- exclusion
+	- hue
+	- saturation
+	- color
+	- luminosity	
+	
+	DEV
+	c.globalCompositeOperation='<operasi komposit>';
+
+atur akhir garis <bentuk>
+	Mengatur bentuk akhir garis.
+	Bentuk yang ada:
+	- pangkal
+	- bulat
+	- persegi
+	
+	DEV
+	c.lineCap='<bentuk>';
+
+atur pergeseran garis putus <nilai>
+	Mengatur pergeseran garis putus.
+	
+	DEV
+	c.lineDashOffset=<nilai>;
+
+atur sambungan garis <jenis>
+	Mengatur jenis sambungan garis.
+	Jenis yang ada:
+	- segitiga
+	- bulat
+	- persegi
+	
+	DEV
+	c.lineJoin='<jenis>';
+
+atur lebar garis <nilai>
+	Mengatur lebar garis.
+	
+	DEV
+	c.lineWidth=<nilai>;
+
+atur batas siku <nilai>
+	Mengatur nilai batas siku pada sambungan garis. Hanya berlaku jika jenis sambungan garis adalah persegi.
+	
+	DEV
+	c.miterLimit=<nilai>;
+
+atur ulang transformasi kanvas
+	Mengatur ulang transformasi kanvas.
+	
+	DEV
+	c.resetTransform();
+
+atur garis putus <nilai <nilai <nilai ...>>>
+	Mengatur bentuk garis putus.
+	Misal,
+		atur garis putus 1 2 4 3
+	maka
+		-  ----   -  ----   -
+	(gores 1, lompat 2, gores 4, lompat 3)
+	
+	DEV
+	c.setLineDash([<nilai>,<nilai>,<nilai>,...]);
+
+atur kekaburan bayangan <nilai>
+	Mengatur nilai kekaburan bayangan. Memberikan efek timbul atau melayang.
+	
+	DEV
+	c.shadowBlur=<nilai>;
+
+atur warna bayangan <warna>
+	Mengatur warna bayangan.
+	
+	DEV
+	c.shadowColor='<warna>';
+
+atur pergeseran X bayangan <nilai>
+	Mengatur pergeseran bayangan pada sumbu X.
+	
+	DEV
+	c.shadowOffsetX=<nilai>;
+
+atur pergeseran Y bayangan <nilai>
+	Mengatur pergeseran bayangan pada sumbu Y.
+	
+	DEV
+	c.shadowOffsetY=<nilai>;
+
+atur warna goresan <warna>
+	Mengatur warna goresan.
+	
+	DEV
+	c.strokeStyle='<warna>';
+
+atur perataan teks <perataan>
+	Mengatur perataan teks.
+	Perataan yang ada:
+	- kiri
+	- kanan
+	- tengah
+	- mulai
+	- akhir
+	
+	DEV
+	c.textAlign='<perataan>';
+
+atur alas teks <lokasi>
+	Mengatur alas teks.
+	Lokasi yang ada:
+	- atas
+	- menggantung
+	- tengah
+	- abjad
+	- ideografis
+	- bawah
+	
+	DEV
+	c.textBaseline='<lokasi>';
+
+bersihkan segi empat <x> <y> <lebar> <tinggi>
+	Membersihkan area kanvas pada lokasi dan seluas ukuran yang diberikan.
+	
+	DEV
+	c.clearRect(<x>,<y>,<lebar>,<tinggi>);
+
+isi
+	Mewarnai sebuah bentuk dengan warna isian yang telah ditentukan sebelumnya.
+	
+	DEV
+	c.fill();
+	
+isi segi empat <x> <y> <lebar> <tinggi>
+	Mewarnai sebuah segi empat dengan lokasi dan ukuran yang diberikan dengan warna isian yang telah ditentukan sebelumnya.
+	
+	DEV
+	c.fillRect(<x>,<y>,<lebar>,<tinggi>);
+	
+isi teks <teks> <x> <y>
+	Mewarnai teks dengan lokasi yang diberikan dengan warna isian yang telah ditentukan sebelumnya.
+	
+	DEV
+	c.fillText(<teks>,<x>,<y>);
+
+gores
+	Membuat goresan dari sebuah bentuk dengan warna isian yang telah ditentukan sebelumnya.
+	
+	DEV
+	c.stroke();
+	
+gores segi empat <x> <y> <lebar> <tinggi>
+	Membuat goresan dari sebuah segi empat dengan lokasi dan ukuran yang diberikan dengan warna isian yang telah ditentukan sebelumnya.
+	
+	DEV
+	c.strokeRect(<x>,<y>,<lebar>,<tinggi>);
+	
+gores teks <teks> <x> <y>
+	Membuat goresan dari teks dengan lokasi yang diberikan dengan warna isian yang telah ditentukan sebelumnya.
+	
+	DEV
+	c.strokeText(<teks>,<x>,<y>);
+
+mulai garis
+	Menandai bahwa sebuah garis baru sedang dibuat.
+	
+	DEV
+	c.beginPath();
+
+tutup garis
+	Menutup garis yang sudah dibuat.
+	
+	DEV
+	c.closePath();
+
+garis lingkaran <x> <y> <jari-jari> <sudut awal> <sudut akhir> <berlawanan arah jarum jam>
+	Menambahkan garis lingkaran pada titik terakhir garis yang berpusat di titik (x, y) dengan jari-jari yang diberikan dan dimulai dari sudut awal ke sudut akhir. <sudut awal> dan <sudut akhir> merupakan nilai dalam radian.
+	
+	DEV
+	c.arc(<x>,<y>,<jari-jari>,<sudut awal>,<sudut akhir>,<berlawanan arah jarum jam>);
+
+garis elips <x> <y> <jari-jari x> <jari-jari y> <putaran> <sudut awal> <sudut akhir> <berlawanan arah jarum jam>
+	Menambahkan garis elips pada titik terakhir garis yang berpusat di titik (x, y) dengan jari-jari yang diberikan dan dimulai dari sudut awal ke sudut akhir.
+	
+	DEV
+	c.ellipse(<x>,<y>,<jari-jari x>,<jari-jari y>,<putaran>,<sudut awal>,<sudut akhir>,<berlawanan arah jarum jam>);
+
+garis segi empat <x> <y> <lebar> <tinggi>
+	Menambahkan garis segi empat pada titik terakhir garis yang dimulai dari titik (x, y) dengan lebar dan tinggi yang diberikan.
+	
+	DEV
+	c.rect(<x>,<y>,<lebar>,<tinggi>);
+
+garis busur ke <x1> <y1> <x2> <y2> <jari-jari>
+	Menambahkan garis busur pada titik terakhir garis dengan titik kontrol (x1, y1) dan (x2, y2) dan jari-jari yang diberikan, terhubung dengan titik terakhir dengan sebuah garis lurus.
+	
+	DEV
+	c.arcTo(<x1>,<y1>,<x2>,<y2>,<jari-jari>);
+
+geser ke <x> <y>
+	Menggeser penanda garis ke (x, y) atau membuat titk baru di (x, y) dari titik terakhir garis.
+	
+	DEV
+	c.moveTo(<x>,<y>);
+
+garis ke <x> <y>
+	Menambahkan garis lurus ke (x, y) dari titik terakhir garis.
+	
+	DEV
+	c.lineTo(<x>,<y>);
+
+kurva Bezier ke <titik kontrol x1> <titik kontrol y1> <titik kontrol x2> <titik kontrol y2> <x> <y>
+	Menambahkan kurva Bézier dari titik terakhir garis ke titik (x, y) dengan dibengkokan ke titik kontrol (x1, y1) dan (x2, y2).
+	
+	DEV
+	c.bezierCurveTo(<titik kontrol x1>,<titik kontrol y1>,<titik kontrol x2>,<titik kontrol y2>,<x>,<y>);
+
+kurva kuadrat ke <titik kontrol x1> <titik kontrol y1> <x> <y>
+	Menambahkan kurva Bézier kuadrat dari titik terakhir garis ke titik (x, y) dengan dibengkokan ke titik kontrol (x1, y1).
+	
+	DEV
+	c.quadraticCurveTo(<titik kontrol x1>,<titik kontrol y1>,<x>,<y>)
+
+putar kanvas <besaran> <satuan>
+	Memutar kanvas searah jarum jam sebesar nilai yang diberikan.
+	Satuan yang ada:
+	- derajat
+	- radian
+	
+	DEV
+	c.rotate(<besaran dalam radian>);
+
+skala kanvas <x> <y>
+	Mengubah skala kanvas menjadi nilai yang diberikan.
+	
+	DEV
+	c.scale(<x>,<y>);
+
+geser kanvas <x> <y>
+	Menggeser kanvas sejauh nilai yang diberikan.
+	
+	DEV
+	c.translate(<x>,<y>);
+
+simpan pengaturan
+	Menyimpan pengaturan kanvas.
+	Pengaturan yang disimpan:
+	- transformasi kanvas
+	- pengaturan garis putus
+	- nilai dari atribut:
+		+ warna isian
+		+ font
+		+ alfa global
+		+ operasi komposit global
+		+ akhir garis
+		+ pergeseran garis putus
+		+ sambungan garis
+		+ lebar garis
+		+ batas siku
+		+ kekaburan bayangan
+		+ warna bayangan
+		+ pergeseran X bayangan
+		+ pergeseran Y bayangan
+		+ warna goresan
+		+ perataan teks
+		+ alas teks
+	
+	DEV
+	c.save();
+	
+muat pengaturan
+	Memuat pengaturan kanvas.
+	
+	DEV
+	c.restore();
