@@ -31,7 +31,7 @@ var Kanvasku = {
 // Mengubah ke sudut dalam satuan radian
 Kanvasku.sudut = function (sudut) {
 	var m = /(.+) *(derajat|radian)/i.exec(sudut.toLowerCase());
-	var sudut = m[1];
+	sudut = m[1];
 	if (m[2] === "derajat") {
 		return sudut * Math.PI / 180;
 	} else if (m[2] === "radian") {
@@ -44,7 +44,6 @@ Kanvasku.sudut = function (sudut) {
 };
 
 Kanvasku.beritahuKesalahan = function (perintah) {
-	// console.error("perintah \"" + perintah + "\" tidak diketahui atau tidak tepat.");
 	throw new Error("perintah \"" + perintah + "\" tidak diketahui atau tidak tepat.");
 };
 
@@ -52,7 +51,6 @@ Kanvasku.prosesSkrip = function (skrip, jalankan) {
 	var perintah = skrip.split("\n");
 	var JS = "";
 	for (var i = 0; i < perintah.length; i++) {
-		// console.log(perintah[i]);
 		if (/^[\t]*$/i.test(perintah[i]))
 			continue;
 		var ketemu = false;
@@ -68,8 +66,6 @@ Kanvasku.prosesSkrip = function (skrip, jalankan) {
 		}
 	}
 	if (jalankan) {
-		// console.log("menjalankan skrip");
-		// console.log(JS);
 		eval(JS);
 	}
 	return JS;
@@ -123,8 +119,8 @@ Kanvasku.daftarPerintah = [
 				textAlignID : ["kiri", "kanan", "tengah", "mulai", "akhir"],
 				textBaseline : ["top", "hanging", "middle", "alphabetic", "ideographic", "bottom"],
 				textBaselineID : ["atas", "menggantung", "tengah", "abjad", "ideografis", "bawah"]
-			}
-			for (key in R) {
+			};
+			for (var key in R) {
 				if (R[key].test(a) === true) {
 					var param = R[key].exec(a)[1];
 					var param2 = R[key].exec(a)[2];
@@ -336,7 +332,7 @@ Kanvasku.daftarPerintah = [
 				return "c.restore();";
 			}
 		}
-	],
+	]
 ];
 
 // Cari skrip kanvasku saat laman dimuat.

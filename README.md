@@ -5,7 +5,7 @@ Kanvasku adalah sebuah alat untuk mengubah dari perintah-perintah bahasa Indones
 
 ##Gambaran Proses
 ```
-	Perintah -> Kanvasku -> JavaScript
+Perintah -> Kanvasku -> JavaScript
 ```
 
 ##Pemasangan
@@ -14,18 +14,18 @@ Cukup tambahkan kode berikut ke halaman web Anda:
 Tambahkan di antara <head> dan </head>:
 (Sesuaikan alamat ke berkas di mana kanvasku.min.js disimpan)
 ```html
-	<script src="alamat/ke/berkas/kanvasku.min.js"></script>
+<script src="alamat/ke/berkas/kanvasku.min.js"></script>
 ```
 
 Tambahkan ke tempat kanvas Anda:
 ```html
-	<canvas id="kanvas1"></canvas>
-	<script type="teks/kanvasku">
-		gunakan kanvas #kanvas1
-		siapkan kanvas
-		
-		isi segi empat 10 10 100 100
-	</script>
+<canvas id="kanvas1"></canvas>
+<script type="teks/kanvasku">
+gunakan kanvas #kanvas1
+siapkan kanvas
+
+isi segi empat 10 10 100 100
+</script>
 ```
 
 Jika Anda memasangnya dengan benar, maka Anda akan mendapatkan persegi berwarna hitam dengan panjang sisi 100px.
