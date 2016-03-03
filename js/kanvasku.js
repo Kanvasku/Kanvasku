@@ -4,14 +4,14 @@
     Kanvasku adalah sebuah alat untuk mengubah dari perintah-perintah bahasa
     Indonesia ke bahasa JavaScript.
 
-    Hak Cipta (C) 2016 Muhammad Rifqi Priyo Susanto (srifqi) dan kontributor
+    Hak Cipta (c) 2016 Muhammad Rifqi Priyo Susanto (srifqi) dan kontributor
 
     Program ini adalah perangkat lunak gratis: Anda dapat mendistribusikan
     ulang dan/atau mengubah dengan ketentuan dari GNU General Public License
     sesuai yang dipublikasikan oleh the Free Software Foundation; baik
     Lisensi versi 3, atau (pada pilihan Anda) versi setelahnya.
 
-    Program ini didistribusikan denagn harapan akan berguna, tetapi TANPA
+    Program ini didistribusikan dengan harapan akan berguna, tetapi TANPA
     GARANSI APAPUN; bahkan tanpa menyiratkan garansi dari DAPAT DIJUALBELIKAN
     atau KEMAMPUAN UNTUK TUJUAN TERTENTU.  Lihat the GNU General Public License
     untuk detil lebih (bahasa Inggris).
@@ -51,18 +51,21 @@ Kanvasku.prosesSkrip = function (skrip, jalankan) {
 	var perintah = skrip.split("\n");
 	var JS = "";
 	for (var i = 0; i < perintah.length; i++) {
-		if (/^[\t]*$/i.test(perintah[i]))
+		if (/^\s*$/i.test(perintah[i]))
+			continue;
+		var perintahkei = perintah[i].replace(/^\s*|\s*$/, "");
+		if (/^#/.test(perintahkei))
 			continue;
 		var ketemu = false;
 		for (var o = 0; o < Kanvasku.daftarPerintah.length; o++) {
-			if (Kanvasku.daftarPerintah[o][0].test(perintah[i]) === true) {
+			if (Kanvasku.daftarPerintah[o][0].test(perintahkei) === true) {
 				ketemu = true;
 				JS += Kanvasku.daftarPerintah[o][1](
-					Kanvasku.daftarPerintah[o][0].exec(perintah[i]));
+					Kanvasku.daftarPerintah[o][0].exec(perintahkei));
 			}
 		}
 		if (ketemu === false) {
-			Kanvasku.beritahuKesalahan(perintah[i]);
+			Kanvasku.beritahuKesalahan(perintahkei);
 		}
 	}
 	if (jalankan) {
